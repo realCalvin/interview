@@ -8,14 +8,21 @@ class Graph:
     def addEdge(self, v1, v2, weight):
         if v1 >= self.size or v2 >= self.size:
             print("Out of bounds")
-            return 
+            return
         self.graph[v1][v2] = weight
         self.graph[v2][v1] = weight
 
     def print(self):
+        print("   ", end="")
+        for v in range(self.size):
+            print(v, end="  ")
+        print()
+        c = 0
         for row in self.graph:
+            print(c, end=" ")
+            c += 1
             print(row)
-    
+
 
 if __name__ == '__main__':
     g = Graph(7)
